@@ -1,0 +1,14 @@
+{
+    "name": "mathi/projet_php",
+    "autoload": {
+        "psr-4": {
+            "Mathi\\ProjetPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mathieu Audibert"
+        }
+    ],
+    "require": {}
+}
