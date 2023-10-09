@@ -2,6 +2,7 @@
 
 function display_panier(){
     echo '
+    <title>Fleurissimo | Panier</title>
     <h1>Votre panier Fleurissimo</h1>
     <body>
     <nav class="navbar">

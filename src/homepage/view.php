@@ -2,6 +2,7 @@
 
 function display_homepage(){
     echo '
+    <title>Fleurissimo | Acceuil</title>
     <h1>Accueil Fleurissimo</h1>
     <body>
     <nav class="navbar">

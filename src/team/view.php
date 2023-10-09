@@ -2,6 +2,7 @@
 
 function display_team(){
     echo '
+    <title>Fleurissimo | L\'equipe</title>
     <h1>l\'equipe Fleurissimo</h1>
     <body>
     <nav class="navbar">
