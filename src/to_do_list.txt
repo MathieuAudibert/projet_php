@@ -26,7 +26,8 @@ CREATE TABLE login(
 	roles_login VARCHAR(30) NOT NULL,
 	nom_u_login VARCHAR(30) NOT NULL,
 	prenom_u_login VARCHAR(30) NOT NULL,
-	email_login VARCHAR(50) UNIQUE
+	email_login VARCHAR(50) UNIQUE,
+	mdp_login VARCHAR(30) NOT NULL UNIQUE
 );
 
 CREATE TABLE fleurs(
