@@ -5,6 +5,24 @@ function display_panier(){
     <html>
     <head>
         <title>Fleurissimo | Panier</title>
+        <style>
+            .flower-card {
+                border: 1px solid #ddd;
+                padding: 10px;
+                margin: 10px;
+                width: 200px;
+                display: inline-block;
+                vertical-align: top; 
+            }
+            .flower-image {
+                max-width: 100%;
+                height: auto;
+            }
+            .flower-price {
+                margin-top: 10px;
+                font-weight: bold;
+            }
+        </style>
     </head>
     <body>
         <h1>Votre panier Fleurissimo</h1>
@@ -17,7 +35,7 @@ function display_panier(){
                 <li><a href="../team">L\'equipe</a></li>
             </ul>
         </nav>
-        <hr style ="border: 1px solid red; margin: 20px 0;">
+        <hr style="border: 1px solid red; margin: 20px 0;">
         <h1>Votre panier</h1>
         <table>
             <tr>
