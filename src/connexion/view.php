@@ -101,4 +101,85 @@ function display_connexion() {
     </body>
     </html>';
 }
-?>
+
+function regis_succes() {
+    echo '
+    <html>
+    <head>
+        <title>Fleurissimo | Inscription réussie</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+            }
+            h2 {
+                color: #333;
+            }
+            p {
+                font-size: 16px;
+            }
+            a {
+                background-color: #333;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+                text-decoration: none;
+            }
+            a:hover {
+                background-color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Inscription réussie</h2>
+        <p>Vous êtes maintenant inscrit sur notre site.</p>
+        <div class="container">
+            <a href="../">Retour à l\'accueil</a>
+        </div>
+    </body>
+    </html>';
+};
+
+function regis_error() {
+    echo '
+    <html>
+    <head>
+        <title>Fleurissimo | Erreur d\'inscription</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            font-size: 16px;
+        }
+        a {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none.
+        }
+        a:hover {
+            background-color: #555;
+        }
+    </style>
+    </head>
+    <body>
+        <h2>Erreur d\'inscription</h2>
+        <p>Une erreur est survenue lors de l\'inscription. Veuillez réessayer.</p>
+        <div class="container">
+            <a href="../">Retour à l\'accueil</a>
+        </div>
+    </body>
+    </html>';
+};
