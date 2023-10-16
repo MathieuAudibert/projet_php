@@ -6,11 +6,9 @@ $password = "20221134";
 
 try {
     $pdo = new PDO($dsn, $username, $password);
-    echo 'Connexion réussie';
+    echo '';
 } catch (PDOException $e) {
     echo "Erreur de connexion : " . $e->getMessage();
 }
-
-
 
 ?>

@@ -1,32 +1,20 @@
 <?php
 function requetes_panier(){
-    session_start(); 
-
     if (!isset($_SESSION['panier'])) {
         $_SESSION['panier'] = array();
     }
 
     $total = 0;
 
-    if (isset($_POST['id_fleurs_a_supp']) && is_numeric($_POST['id_fleurs_a_supp'])) {
-        $id_fleurs_a_supp = $_POST['id_fleurs_a_supp'];
+    if (isset($_POST['fleurs_id_a_supprimer']) && is_numeric($_POST['fleurs_id_a_supprimer'])) {
+        $id_fleurs_a_supp = $_POST['fleurs_id_a_supprimer'];
         if (isset($_SESSION['panier'][$id_fleurs_a_supp])) {
             unset($_SESSION['panier'][$id_fleurs_a_supp]);
         }
-
+    
         header('Location: panier');
         exit;
     }
-    
-    echo "<h1>Votre panier</h1>";
-    echo "<table>";
-    echo "<tr>
-            <th>Produit</th>
-            <th>Quantité</th>
-            <th>Prix unitaire</th>
-            <th>Total</th>
-        </tr>";
-
     if (empty($_SESSION['panier'])) {
         echo "<tr><td colspan='4'>Le panier est vide.</td></tr>";
     } else {

@@ -1,41 +1,62 @@
 <?php
-function display_panier(){
-    session_start();
-    $view = '
+function display_panier() {
+    echo '
     <html>
     <head>
         <title>Fleurissimo | Panier</title>
         <style>
-            .flower-card {
-                border: 1px solid #ddd;
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+            }
+            h1 {
+                color: #333;
+            }
+            .navbar {
+                background-color: #444;
                 padding: 10px;
+            }
+            .navbar ul {
+                list-style: none;
+                padding: 0;
+            }
+            .navbar li {
+                display: inline;
                 margin: 10px;
-                width: 200px;
-                display: inline-block;
-                vertical-align: top; 
             }
-            .flower-image {
-                max-width: 100%;
-                height: auto;
+            table {
+                width: 100%;
             }
-            .flower-price {
-                margin-top: 10px;
-                font-weight: bold;
+            table, th, td {
+                border: 1px solid #ccc;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 10px;
+                text-align: left;
+            }
+            th {
+                background-color: #333;
+                color: #fff;
+            }
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+            tr:nth-child(odd) {
+                background-color: #fff;
             }
         </style>
     </head>
     <body>
-        <h1>Votre panier Fleurissimo</h1>
         <nav class="navbar">
             <ul>
                 <li><a href="../">Accueil</a></li>
                 <li><a href="../boutique">Boutique</a></li>
                 <li><a href="../connexion">Connexion</a></li>
                 <li><a href="../panier">Le panier</a></li>
-                <li><a href="../team">L\'equipe</a></li>
+                <li><a href="../team">L\'équipe</a></li>
             </ul>
         </nav>
-        <hr style="border: 1px solid red; margin: 20px 0;">
         <h1>Votre panier</h1>
         <table>
             <tr>
@@ -49,7 +70,7 @@ function display_panier(){
     if (isset($_SESSION['panier']) && is_array($_SESSION['panier'])) {
         foreach ($_SESSION['panier'] as $id_fleurs_panier => $details_produit) {
             if (isset($details_produit['quantite']) && isset($details_produit['prix_unitaire'])) {
-                $view .= '
+                echo '
                 <tr>
                     <td>Nom du produit</td>
                     <td>' . $details_produit['quantite'] . '</td>
@@ -66,10 +87,9 @@ function display_panier(){
         }
     }
 
-    $view .= '
+    echo '
         </table>
     </body>
     </html>';
-    return $view;
 }
 ?>

@@ -1,9 +1,10 @@
 <?php
+require_once('requetes.php');
 function display_boutique(){
     $view = '
     <html>
     <head>
-        <title>Fleurissmo | Boutique</title>
+        <title>Fleurissimo | Boutique</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -66,58 +67,29 @@ function display_boutique(){
         </nav>
         <h1>La boutique Fleurissimo</h1>';
 
-    $view .= '
-        <div class="flower-container">
-            <div class="flower-card">
-                <img class="flower-image" src="../images/coquelicot.png" alt="Coquelicot">
-                <p class="flower-price">$10.99</p>
-                <form method="post" action="../panier">
-                    <input type="hidden" name="fleurs_id" value="1"> 
-                    <button type="submit" name="ajouter_au_panier">Ajouter au panier</button>
-                </form>
-            </div>
 
-            <div class="flower-card">
-                <img class="flower-image" src="../images/rose.png" alt="Rose">
-                <p class="flower-price">$12.99</p>
-                <form method="post" action="../panier">
-                    <input type="hidden" name="fleurs_id" value="2"> 
-                    <button type="submit" name="ajouter_au_panier">Ajouter au panier</button>
-                </form>
-            </div>
-
-            <div class="flower-card">
-                <img class="flower-image" src="../images/marguerite.png" alt="Marguerite">
-                <p class="flower-price">$20</p>
-                <form method="post" action="../panier">
-                    <input type="hidden" name="fleurs_id" value="3"> 
-                    <button type="submit" name="ajouter_au_panier">Ajouter au panier</button>
-                </form>
-            </div>
-
-            <div class="flower-card">
-                <img class="flower-image" src="../images/tulipe.png" alt="Tulipe">
-                <p class="flower-price">$5</p>
-                <form method="post" action="../panier">
-                    <input type="hidden" name="fleurs_id" value="4"> 
-                    <button type="submit" name="ajouter_au_panier">Ajouter au panier</button>
-                </form>
-            </div>
-
-            <div class="flower-card">
-                <img class="flower-image" src="../images/tournesol.png" alt="Tournesol">
-                <p class="flower-price">$9.99</p>
-                <form method="post" action="../panier">
-                    <input type="hidden" name="fleurs_id" value="5"> 
-                    <button type="submit" name="ajouter_au_panier">Ajouter au panier</button>
-                </form>
-            </div>
-        </div>';
 
     $view .= '
+        <div class="flower-container">';
+        $fleurs = requetes_boutique(); 
+
+        foreach ($fleurs as $fleur) {
+            $view .= '
+                <div class="flower-card">
+                    <img class="flower-image" src="' . $fleur['image_fleurs'] . '" alt="' . $fleur['nom_fleurs'] . '">
+                    <p class="flower-price">$' . $fleur['prix_fleurs'] . '</p>
+                    <form method="post" action="../panier">
+                    <input type="hidden" name="id_fleurs" value="' . $fleur['id_fleurs'] . '">
+                        <button type="submit" name="ajouter_au_panier">Ajouter au panier</button>
+                    </form>
+                </div>';
+        }
+        
+
+    $view .= '
+        </div>
     </body>
     </html>
     ';
     return $view;
 }
-?>

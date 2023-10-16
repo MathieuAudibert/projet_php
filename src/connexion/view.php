@@ -106,7 +106,7 @@ function regis_succes() {
     echo '
     <html>
     <head>
-        <title>Fleurissimo | Inscription réussie</title>
+        <title>Fleurissimo | Inscription/Connexion réussie</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -134,8 +134,8 @@ function regis_succes() {
         </style>
     </head>
     <body>
-        <h2>Inscription réussie</h2>
-        <p>Vous êtes maintenant inscrit sur notre site.</p>
+        <h2>Inscription/Connexion réussie</h2>
+        <p>Vous êtes maintenant inscrit/connecté sur notre site.</p>
         <div class="container">
             <a href="../">Retour à l\'accueil</a>
         </div>
@@ -147,7 +147,7 @@ function regis_error() {
     echo '
     <html>
     <head>
-        <title>Fleurissimo | Erreur d\'inscription</title>
+        <title>Fleurissimo | Erreur d\'inscription/Connexion</title>
         <style>
         body {
             font-family: Arial, sans-serif;
@@ -175,8 +175,8 @@ function regis_error() {
     </style>
     </head>
     <body>
-        <h2>Erreur d\'inscription</h2>
-        <p>Une erreur est survenue lors de l\'inscription. Veuillez réessayer.</p>
+        <h2>Erreur d\'inscription/connexion</h2>
+        <p>Une erreur est survenue lors de l\'inscription/connexion. Veuillez réessayer.</p>
         <div class="container">
             <a href="../">Retour à l\'accueil</a>
         </div>
