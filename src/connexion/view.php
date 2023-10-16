@@ -27,6 +27,9 @@ function display_connexion() {
                 display: inline;
                 margin: 10px;
             }
+            .navbar li a {
+                color:white;
+            }
 
             form {
                 margin: 20px;

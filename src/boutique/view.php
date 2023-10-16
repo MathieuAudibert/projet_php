@@ -30,7 +30,9 @@ function display_boutique(){
                 display: inline;
                 margin: 10px;
             }
-
+            .navbar li a {
+                color:white;
+            }
             .flower-container {
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

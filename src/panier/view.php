@@ -24,6 +24,9 @@ function display_panier() {
                 display: inline;
                 margin: 10px;
             }
+            .navbar li a {
+                color:white;
+            }
         </style>
     </head>
     <body>

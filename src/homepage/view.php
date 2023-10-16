@@ -30,6 +30,10 @@ function display_homepage(){
                 margin: 10px;
             }
 
+            .navbar li a {
+                color:white;
+            }
+
             p {
                 font-size: 16px; /* Ajustez la taille de police */
                 color: #555;

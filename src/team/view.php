@@ -24,6 +24,9 @@ function display_team(){
                 display: inline;
                 margin: 10px;
             }
+            .navbar li a {
+                color:white;
+            }
             .form-container {
                 width: 300px;
                 margin: 0 auto;
