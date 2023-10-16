@@ -32,12 +32,12 @@ function display_team(){
         </style>
     </head>
     <body>
-        <h1>L\'équipe Fleurissimo</h1>
         <div class="navbar">
             <ul>
                 <li><a href="../">Accueil</a></li>
                 <li><a href="../boutique">Boutique</a></li>
                 <li><a href="../connexion">Connexion</a></li>
+                <li><a href="../inscription">Inscription</a></li>
                 <li><a href="../panier">Le panier</a></li>
                 <li><a href="../team">L\'équipe</a></li>
             </ul>

@@ -16,6 +16,11 @@ function route_request(){
         handler_connexion();
         return;
     }
+    if ($route === '/inscription'){
+        require_once ('./inscription/handler.php');
+        handler_inscription();
+        return;
+    }
     if ($route === '/team'){
         require_once ('./team/handler.php');
         handler_team();

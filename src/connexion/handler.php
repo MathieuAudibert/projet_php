@@ -1,4 +1,4 @@
-<?php
+<?php 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -7,18 +7,18 @@ require_once('./connexion/view.php');
 
 function handler_connexion() {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $username = $_POST['nom_u_login'];
-        $password = $_POST['mdp_login'];
-        $email = $_POST['email_login'];
-        $result = inscription($username, $password, $email);
-        if ($result) {
-            regis_succes();
-        } else {
-            regis_error();
+        if (isset($_POST['connexion'])) {
+            $email = $_POST['email_login'];
+            $password = $_POST['mdp_login'];
+            $auth_result = authentification($email, $password);
+
+            if ($auth_result) {
+                conn_succes();
+            } else {
+                conn_error();
+            }
         }
     } else {
         display_connexion();
     }
 }
-
-?>

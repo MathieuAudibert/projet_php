@@ -1,8 +1,8 @@
 <?php
-function display_connexion() {
+function display_inscription() {
     echo '<html>
     <head>
-        <title>Fleurissimo | Connexion</title>
+        <title>Fleurissimo | Inscription</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -80,22 +80,26 @@ function display_connexion() {
                 <li><a href="../team">L\'équipe</a></li>
             </ul>
         </nav>
-        <h1>Connexion à Fleurissimo</h1>
+        <h1>Inscription à Fleurissimo</h1>
         <form method="post" action="">
+            <h2>Inscription</h2>
+            <label for="nom_u_login">Nom d\'utilisateur:</label>
+            <input type="text" name="nom_u_login" required><br>
             <label for="email_login">Adresse e-mail:</label>
             <input type="email" name="email_login" required><br>
             <label for="mdp_login">Mot de passe:</label>
             <input type="password" name="mdp_login" required><br>
-            <input type="submit" name="connexion" value="Se connecter">
+            <input type="submit" value="S\'inscrire">
         </form>
     </body>
     </html>';
 }
-function conn_succes() {
+
+function inscr_succes() {
     echo '
     <html>
     <head>
-        <title>Fleurissimo | Connexion réussie</title>
+        <title>Fleurissimo | Inscription réussie</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -123,8 +127,8 @@ function conn_succes() {
         </style>
     </head>
     <body>
-        <h2>Connexion réussie</h2>
-        <p>Vous êtes maintenant connecté sur notre site.</p>
+        <h2>Inscription réussie</h2>
+        <p>Vous êtes maintenant inscrit sur notre site.</p>
         <div class="container">
             <a href="../">Retour à l\'accueil</a>
         </div>
@@ -132,11 +136,11 @@ function conn_succes() {
     </html>';
 };
 
-function conn_error() {
+function inscr_error() {
     echo '
     <html>
     <head>
-        <title>Fleurissimo | Erreur de connexion</title>
+        <title>Fleurissimo | Erreur d\'inscription</title>
         <style>
         body {
             font-family: Arial, sans-serif;
@@ -164,10 +168,10 @@ function conn_error() {
     </style>
     </head>
     <body>
-        <h2>Erreur de connexion</h2>
-        <p>Une erreur est survenue lors de la connexion. Veuillez réessayer.</p>
+        <h2>Erreur d\'inscription</h2>
+        <p>Une erreur est survenue lors de l\'inscription. Veuillez réessayer.</p>
         <div class="container">
-            <a href="../connexion">Retour à la page de connexion</a>
+            <a href="../inscription">Retour à l\'inscription</a>
         </div>
     </body>
     </html>';

@@ -61,6 +61,7 @@ function display_boutique(){
                 <li><a href="../">Accueil</a></li>
                 <li><a href="../boutique">Boutique</a></li>
                 <li><a href="../connexion">Connexion</a></li>
+                <li><a href="../inscription">Inscription</a></li>
                 <li><a href="../panier">Le panier</a></li>
                 <li><a href="../team">L\'équipe</a></li>
             </ul>
@@ -69,27 +70,31 @@ function display_boutique(){
 
 
 
-    $view .= '
+        $view .= '
         <div class="flower-container">';
-        $fleurs = requetes_boutique(); 
+    $fleurs = requetes_boutique();
 
-        foreach ($fleurs as $fleur) {
-            $view .= '
-                <div class="flower-card">
-                    <img class="flower-image" src="' . $fleur['image_fleurs'] . '" alt="' . $fleur['nom_fleurs'] . '">
-                    <p class="flower-price">$' . $fleur['prix_fleurs'] . '</p>
-                    <form method="post" action="../panier">
+    foreach ($fleurs as $fleur) {
+        $view .= '
+            <div class="flower-card">
+                <img class="flower-image" src="' . $fleur['image_fleurs'] . '" alt="' . $fleur['nom_fleurs'] . '">
+                <p class="flower-price">$' . $fleur['prix_fleurs'] . '</p>
+                
+                <form method="post" action="../panier">
                     <input type="hidden" name="id_fleurs" value="' . $fleur['id_fleurs'] . '">
-                        <button type="submit" name="ajouter_au_panier">Ajouter au panier</button>
-                    </form>
-                </div>';
-        }
-        
+                    <input type="hidden" name="nom_fleurs" value="' . $fleur['nom_fleurs'] . '">
+                    <input type="hidden" name="prix_fleurs" value="' . $fleur['prix_fleurs'] . '">
+                    <button type="submit" name="ajouter_au_panier">Ajouter au panier</button>
+                </form>
+            </div>';
+    }
+    
 
     $view .= '
         </div>
     </body>
-    </html>
-    ';
+    </html>';
+
     return $view;
 }
+?>

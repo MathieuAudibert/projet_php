@@ -1,22 +1,10 @@
-1. Creer/Preparer la base de données ✔/✔
-2. Definir l'architecture en couches (persistance, présentation) ✔
-3. Creer les modules de données (Creation de classes ou fonctions pour interagir avec BDD) ⌛
-4. Creation des pages HTML : ✔
-    -homepage, ✔
-    -boutique, ✔
-    -panier, ✔
-    -login/signin, ✔
-    -team ✔
-5. Creer la sécurité des vues (pages html) contre les injections SLQ ⌛
-6. Ajouter la couche de peinture (CSS) ⌛
-7.Implementer le Router (navigation entre les pages web) avec erreurs si mauvais lien... ✔
------------------------------------------------------------------------------------------------------
-Idée de site : Site de Vente de fleurs. 
-Page 1 : Homepage avec ptite presentation du site ⌛
-Page 2 : Boutique avec les fleurs disponibles ⌛
-Page 3 : Page de connexion 50/50 ✔/⌛
-Page 4 : Panier ⌛
-Page 5 : page 'la team' ✔
+RESTE A FAIRE : 
+-RAJOUTER DES FLEURS ✔ (100%)
+-CORRIGER LE PANIER/BOUTIQUE ⌛ (50%)
+-CORRIGER LA CONNEXION ✔ (100%)
+-RENDRE LE CODE PROPRE ++ ⌛ (0%) A LA FIN !!! 
+-FIX LA BDD ✔ (100%)
+
 ------------------------------------------------------------------------------------------------------
 Tout est a rendre sur github : https://github.com/MathieuLeBozo/projet_php/tree/main/src
 ------------------------------------------------------------------------------------------------------
@@ -39,12 +27,6 @@ CREATE TABLE fleurs(
 	description_fleurs VARCHAR(50)
 );
 
-'CREATE TABLE panier(
-	id_panier SERIAL PRIMARY KEY,
-	id_fleurs_panier INT REFERENCES fleurs(id_fleurs),
-	id_login_panier INT REFERENCES login(id_login),
-	limite_panier INT NOT NULL
-);
 
 
 

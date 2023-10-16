@@ -24,27 +24,6 @@ function display_panier() {
                 display: inline;
                 margin: 10px;
             }
-            table {
-                width: 100%;
-            }
-            table, th, td {
-                border: 1px solid #ccc;
-                border-collapse: collapse;
-            }
-            th, td {
-                padding: 10px;
-                text-align: left;
-            }
-            th {
-                background-color: #333;
-                color: #fff;
-            }
-            tr:nth-child(even) {
-                background-color: #f2f2f2;
-            }
-            tr:nth-child(odd) {
-                background-color: #fff;
-            }
         </style>
     </head>
     <body>
@@ -53,42 +32,35 @@ function display_panier() {
                 <li><a href="../">Accueil</a></li>
                 <li><a href="../boutique">Boutique</a></li>
                 <li><a href="../connexion">Connexion</a></li>
+                <li><a href="../inscription">Inscription</a></li>
                 <li><a href="../panier">Le panier</a></li>
                 <li><a href="../team">L\'équipe</a></li>
             </ul>
         </nav>
-        <h1>Votre panier</h1>
-        <table>
-            <tr>
-                <th>Produit</th>
-                <th>Quantité</th>
-                <th>Prix unitaire</th>
-                <th>Total</th>
-                <th>Action</th>
-            </tr>';
+        <h1>Votre panier</h1>';
 
     if (isset($_SESSION['panier']) && is_array($_SESSION['panier'])) {
-        foreach ($_SESSION['panier'] as $id_fleurs_panier => $details_produit) {
-            if (isset($details_produit['quantite']) && isset($details_produit['prix_unitaire'])) {
-                echo '
+        echo '<table>
                 <tr>
-                    <td>Nom du produit</td>
-                    <td>' . $details_produit['quantite'] . '</td>
-                    <td>Prix</td>
-                    <td>' . ($details_produit['quantite'] * $details_produit['prix_unitaire']) . '</td>
-                    <td>
-                        <form method="post" action="../panier/requetes.php">
-                            <input type="hidden" name="id_fleurs_a_supp" value="' . $id_fleurs_panier . '">
-                            <button type="submit" name="supprimer_fleurs"><i class="ph ph-trash-simple"></i></button>
-                        </form>
-                    </td>
+                    <th>Nom du produit</th>
+                    <th>Prix</th>
+                    <th>Image</th>
                 </tr>';
-            }
+
+        foreach ($_SESSION['panier'] as $fleur) {
+            echo '<tr>
+                    <td>' . $fleur['nom_fleurs'] . '</td>
+                    <td>$' . $fleur['prix_fleurs'] . '</td>
+                    <td><img src="' . $fleur['image_fleurs'] . '" alt="' . $fleur['nom_fleurs'] . '"></td>
+                  </tr>';
         }
+
+        echo '</table>';
+    } else {
+        echo "Votre panier est vide.";
     }
 
     echo '
-        </table>
     </body>
     </html>';
 }
