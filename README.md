@@ -5,9 +5,9 @@ Désolé je savais pas si j'ecrivais en anglais ou en francais ducoup mes noms d
 
 
 ### Problemes
-Le bouton "ajouter au panier" ne marche pas
+-Le bouton "ajouter au panier" ne marche pas
 
 
-Voici mon adresse e-mail si il y a quelconques question ect...
+Voici mon adresse e-mail : mathieu.audibert@efrei.net
 
 Cordialement, Mathieu Audibert B2 dev et data
