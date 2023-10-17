@@ -1,5 +1,3 @@
-# projet_php
-
 # Projet PHP / Fleurissimo
 ## Le fichier a lancer est router.php
 
