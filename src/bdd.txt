@@ -1,0 +1,33 @@
+Ce fichier sert au cas ou le backup ne fonctionne pas voici a quoi ressemble ma base de données : 
+-------------------------------------------------------------------------------------------------------
+CREATE TABLE login(
+	id_login SERIAL PRIMARY KEY,
+	roles_login VARCHAR(30),
+	nom_u_login VARCHAR(30) NOT NULL,
+	prenom_u_login VARCHAR(30),
+	email_login VARCHAR(50) UNIQUE,
+	mdp_login VARCHAR(30) NOT NULL UNIQUE
+);
+
+CREATE TABLE fleurs(
+	id_fleurs SERIAL PRIMARY KEY,
+	nom_fleurs VARCHAR(30) NOT NULL,
+	variete_fleurs VARCHAR(30),
+	prix_fleurs INT NOT NULL,
+	image_fleurs VARCHAR(50),
+	description_fleurs VARCHAR(50)
+);
+-------------------------------------------------------------------------------------------------------
+
+
+|----------------- login -----------------|
+| id_login  |  roles_login  |  nom_u_login | prenom_u_login | email_login         | mdp_login        |
+|-----------|---------------|--------------|----------------|---------------------|------------------|
+| SERIAL    | VARCHAR(30)   | VARCHAR(30)  | VARCHAR(30)    | VARCHAR(50)         | VARCHAR(30)      |
+|PRIMARY KEY|               | NOT NULL     |                |NOT NULL             | NOT NULL   UNIQUE| 
+
+|----------------- fleurs -----------------|
+| id_fleurs  |  nom_fleurs  |  variete_fleurs | prix_fleurs | image_fleurs       | description_fleurs |
+|------------|--------------|-----------------|-------------|---------------------|-------------------|
+| SERIAL     | VARCHAR(30)  | VARCHAR(30)     | INT         | VARCHAR(50)         | VARCHA(50)        |
+| PRIMARY KEY|              |                 | NOTNULL     |                     |                   |

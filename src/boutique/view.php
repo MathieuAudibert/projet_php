@@ -9,7 +9,7 @@ function display_boutique(){
             body {
                 font-family: Arial, sans-serif;
                 text-align: center;
-                background-color: #f5f5f5; /* Couleur de fond */
+                background-color: #f5f5f5;
             }
 
             h1 {
@@ -42,7 +42,7 @@ function display_boutique(){
             .flower-card {
                 border: 1px solid #ddd;
                 padding: 10px;
-                background-color: #fff; /* Couleur de fond des cartes */
+                background-color: #fff;
             }
 
             .flower-image {
@@ -80,7 +80,9 @@ function display_boutique(){
         $view .= '
             <div class="flower-card">
                 <img class="flower-image" src="' . $fleur['image_fleurs'] . '" alt="' . $fleur['nom_fleurs'] . '">
-                <p class="flower-price">$' . $fleur['prix_fleurs'] . '</p>
+                <p class="flower-price">' . $fleur['prix_fleurs'] . '€</p>
+                <p class="flower-name">'. $fleur['nom_fleurs'] .'</p>
+                <p>'. $fleur['description_fleurs'] .'</p>
                 
                 <form method="post" action="../panier">
                     <input type="hidden" name="id_fleurs" value="' . $fleur['id_fleurs'] . '">

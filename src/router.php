@@ -31,7 +31,7 @@ function route_request(){
         handler_panier();
         return;
     }
-    echo '404 NOT FOUND';
+    echo 'ERROR 404 NOT FOUND';
 }
 route_request();
 ?>

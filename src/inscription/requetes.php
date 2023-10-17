@@ -6,12 +6,12 @@ function inscription($username, $password, $email) {
     $db_password = "20221134";
     try {
         $pdo = new PDO($dsn, $db_username, $db_password);
-        $query = "INSERT INTO login(nom_u_login, mdp_login, email_login) VALUES (?, ?, ?)";
-        $stmt = $pdo->prepare($query);
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-        $result = $stmt->execute([$username, $hashed_password, $email]);
+        $requete = "INSERT INTO login(nom_u_login, mdp_login, email_login) VALUES (?, ?, ?)";
+        $req = $pdo->prepare($requete);
+        $mdp_sur = password_hash($password, PASSWORD_DEFAULT);
+        $resultat = $requete->execute([$username, $mdp_sur, $email]);
 
-        return $result;
+        return $resultat;
     } catch (PDOException $e) {
         echo "Erreur de la base de données : " . $e->getMessage(); 
         return false;

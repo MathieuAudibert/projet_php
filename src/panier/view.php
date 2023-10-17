@@ -45,7 +45,7 @@ function display_panier() {
     if (isset($_SESSION['panier']) && is_array($_SESSION['panier'])) {
         echo '<table>
                 <tr>
-                    <th>Nom du produit</th>
+                    <th>Nom</th>
                     <th>Prix</th>
                     <th>Image</th>
                 </tr>';

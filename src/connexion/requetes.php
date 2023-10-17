@@ -6,12 +6,12 @@ function authentification($email, $password) {
     $db_password = "20221134";
     try {
         $pdo = new PDO($dsn, $db_username, $db_password);
-        $query = "SELECT mdp_login FROM login WHERE email_login = ?";
-        $stmt = $pdo->prepare($query);
-        $stmt->execute([$email]);
-        $hashed_password = $stmt->fetchColumn();
+        $requete = "SELECT mdp_login FROM login WHERE email_login = ?";
+        $req = $pdo->prepare($requete);
+        $req->execute([$email]);
+        $mdp_sur = $req->fetchColumn();
 
-        if (password_verify($password, $hashed_password)) {
+        if (password_verify($password, $mdp_sur)) {
             return true;
         } else {
             return false;

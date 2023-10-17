@@ -9,12 +9,12 @@ function requetes_panier() {
 
     if (!empty($_SESSION['panier'])) {
         foreach ($_SESSION['panier'] as $fleur) {
-            $nom_produit = $fleur['description_fleurs'];
-            $prix_unitaire = $fleur['prix_fleurs']; 
+            $nom = $fleur['nom_fleurs'];
+            $prix = $fleur['prix_fleurs']; 
 
             $view .= '<tr>
-                <td>' . $nom_produit . '</td>
-                <td>' . $prix_unitaire . '</td>
+                <td>' . $nom . '</td>
+                <td>' . $prix . '</td>
                 <td>
                     <form method="post" action="../panier/requetes.php">
                         <input type="hidden" name="id_fleurs_a_supp" value="' . $id_fleurs . '">
@@ -31,3 +31,4 @@ function requetes_panier() {
 
     return $view;
 }
+?>
