@@ -1,9 +1,11 @@
 <?php
 require_once ('./bdd.php');
+
 function authentification($email, $password) {
     $dsn = "pgsql:host=localhost;dbname=fleurissimo;port=5432;";
     $db_username = "postgres";
     $db_password = "20221134";
+
     try {
         $pdo = new PDO($dsn, $db_username, $db_password);
         $requete = "SELECT mdp_login FROM login WHERE email_login = ?";

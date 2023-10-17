@@ -1,5 +1,6 @@
 <?php
 require_once('requetes.php');
+
 function display_boutique(){
     $view = '
     <html>
@@ -70,9 +71,7 @@ function display_boutique(){
         </nav>
         <h1>La boutique Fleurissimo</h1>';
 
-
-
-        $view .= '
+    $view .= '
         <div class="flower-container">';
     $fleurs = requetes_boutique();
 
@@ -92,7 +91,6 @@ function display_boutique(){
                 </form>
             </div>';
     }
-    
 
     $view .= '
         </div>

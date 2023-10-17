@@ -13,11 +13,9 @@ function handler_inscription() {
             inscr_succes();
         } else {
             inscr_error();
-            header('Location : inscription');
+            header('Location: inscription');
         }
     } else {
         display_inscription();
     }
 }
-
-?>

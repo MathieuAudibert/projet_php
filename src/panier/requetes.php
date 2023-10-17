@@ -17,7 +17,7 @@ function requetes_panier() {
                 <td>' . $prix . '</td>
                 <td>
                     <form method="post" action="../panier/requetes.php">
-                        <input type="hidden" name="id_fleurs_a_supp" value="' . $id_fleurs . '">
+                        <input type="hidden" name="id_fleurs_a_supp" value="' . $fleur['id_fleurs'] . '">
                         <button type="submit" name="supprimer_fleurs">Supprimer</button>
                     </form>
                 </td>

@@ -1,6 +1,7 @@
 <?php
 function display_connexion() {
-    echo '<html>
+    echo '
+    <html>
     <head>
         <title>Fleurissimo | Connexion</title>
         <style>
@@ -94,6 +95,7 @@ function display_connexion() {
     </body>
     </html>';
 }
+
 function conn_succes() {
     echo '
     <html>
@@ -133,7 +135,7 @@ function conn_succes() {
         </div>
     </body>
     </html>';
-};
+}
 
 function conn_error() {
     echo '
@@ -174,4 +176,5 @@ function conn_error() {
         </div>
     </body>
     </html>';
-};
+}
+?>
