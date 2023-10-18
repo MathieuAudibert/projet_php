@@ -2,9 +2,8 @@
 function requetes_panier() {
     $view = '<table>
         <tr>
-            <th>Produit</th>
-            <th>Prix unitaire</th>
-            <th>Action</th>
+            <th>Fleurs</th>
+            <th>Prix</th>
         </tr>';
 
     if (!empty($_SESSION['panier'])) {
